@@ -1,0 +1,27 @@
+{% extends 'admin/adbase.html' %}
+
+
+{% block content %}
+    <h1>Créer un plat </h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.nom.label }}<br>
+            {{ form.nom(size=32) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=32) }}
+        </p>
+         <p>
+            {{ form.prix.label }}<br>
+            {{ form.prix(size=32) }}
+        </p>
+        <p>
+            {{ form.categorie_id.label }}<br>
+            {{ form.categorie_id }}
+        </p>
+       
+        <button class="btn btn-primary">{{methode}}</button>
+    </form>
+{% endblock %}

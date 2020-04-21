@@ -1,0 +1,74 @@
+
+
+{% extends 'admin/adbase.html' %}
+        <!-- Begin Page Content -->
+          
+          {% block content %}
+
+          
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Liste de types</h1>
+          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+
+
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h4 class="m-0 font-weight-bold text-primary">Types</h4>
+          <button style="float: right;" class="btn btn-success">
+            <a href="{{url_for('new_type')}}" class="text-white">Créer un nouveau type</a></button>
+
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for type in types %}
+
+                        <tr>
+                          <td>{{type.description}}</td>
+
+                          <td class="text-center">
+                            <a href="{{url_for('edit_type',description=type.description)}}">Edit</a>
+                            <a onclick="return confirm('supprimer ?')" href="{{url_for('remove_type',description=type.description)}}">Remove</a>
+                          </td>
+                        </tr>
+
+                      {% endfor %}
+
+                       
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+          {% endblock %}
+
+        <!-- /.container-fluid -->
+
+     
+
+     {% block js %}
+
+     {{super()}}
+
+        <!-- Page level plugins -->
+        <script src="{{url_for('static',filename='admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{url_for('static',filename='admin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="{{url_for('static',filename='admin/js/demo/datatables-demo.js')}}"></script>
+
+     {% endblock %}
