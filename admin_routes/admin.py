@@ -1,7 +1,6 @@
 from app import app
 
 from flask import render_template, flash, redirect,request,url_for
-from faker import Faker
 
 
 
@@ -27,6 +26,11 @@ from forms import *
 @app.route('/ad/base/')
 def base():
 	return render_template('admin/adbase.html')
+
+@app.route('/ad/contact/')
+def contact_liste():
+    contacts = Contact.query.all()
+    return render_template('admin/adbase.html',contacts = contacts)
 
 
 

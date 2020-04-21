@@ -14,8 +14,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
-import routes ,models
+import routes ,models ,admin_routes.admin
 
-from admin_routes import *
 
 

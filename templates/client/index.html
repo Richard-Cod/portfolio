@@ -1,18 +1,40 @@
 {% extends 'client/base.html' %}
 
+{% from "_formhelper.html" import render_field %}
+
 {% block content  %}
 
         
         <!--================Header Menu Area =================-->
 		{% include 'client/header.html' %}
         <!--================Header Menu Area =================-->
+		
         
         <!--================Home Banner Area =================-->
         <section class="home_banner_area">
+		
            	<div class="container box_1620">
+			    {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+              <div class="mt-2">
+                  {% for category,message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                        <strong>{{message}} <a href="#contactform">Revenir au formulaire</a> </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                  {% endfor %}
+              </div>
+
+              {% endif %}
+      {% endwith %}
            		<div class="banner_inner d-flex align-items-center">
+				   
 					<div class="banner_content">
 						<div class="media">
+						
 							<div class="d-flex">
 								<img src="https://media-exp1.licdn.com/dms/image/C5603AQGV5ReQv4oLtg/profile-displayphoto-shrink_200_200/0?e=1593043200&v=beta&t=5Weg488BWzZCA9FlLvc2awwAWYmwOpSqntBPHt6v8Gs" alt="">
 							</div>
@@ -260,58 +282,68 @@
         </section>
         <!--================End Testimonials Area =================-->
         
-        <!--================Footer Area =================-->
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget ab_widget">
-        					<div class="f_title">
-        						<h3>A propos de moi</h3>
-        					</div>
-        					<p>N'hésitez pas à prendre contact avec moi ;)</p>
-        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | Ce template proposé <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        				</aside>
-        			</div>
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Abonnez-vous pour recevoir des mails quotidien de ma part</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Entrer votre adresse email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
+       <!--================Contact Area =================-->
+        <section  class="contact_area p_120">
+            <div class="container">
+                <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>{{info.lieu}}</h6>
+								<p></p>
                             </div>
-        				</aside>
-        			</div>
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Suivez moi</h3>
-        					</div>
-        					<p>Sur les réseaux sociaux</p>
-        					<ul class="list">
-							
-        						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
-        <!--================End Footer Area =================-->
-        
-        
-        
-        
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">{{info.telephone}}</a></h6>
+                                <p>Lundi au vendredi de 9h à 18h</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">{{info.email}}</a></h6>
+                                <p>Écrivez-moi !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <form class="row contact_form"  method="post" id="contactform" novalidate="novalidate">
+						            {{ form.hidden_tag() }}
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+									 {{render_field(form.nom, size=32,class_="form-control",placeholder="Entrer votre nom",step=1,min=10,max=100,)}}
+                                </div>
+                                <div class="form-group">
+									 {{render_field(form.email, size=32,class_="form-control",placeholder="Entrer votre email",step=1,min=10,max=100,)}}
+
+                                </div>
+                                <div class="form-group">
+									 {{render_field(form.sujet, size=32,class_="form-control",placeholder="Entrer le sujet",step=1,min=10,max=100,)}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+									 {{render_field(form.message, size=32,class_="form-control",placeholder="Entrer le message",step=1,min=10,max=100,)}}
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn submit_btn">Envoyez votre message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
         
 
 
