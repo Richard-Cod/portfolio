@@ -77,10 +77,17 @@ projets = [
 temoignages=[
 		{
 		"nom":"Momar Diagne",
-		"description":"Je remercierai jamais assez Richard pour ce superbe site ecommerce qui m'a permis de tripler mes revenues et d'augmenter mon audience 😃"
+		"description":"Je remercierai jamais assez Richard pour ce superbe site ecommerce qui m'a permis de tripler mes revenues et d'augmenter mon audience 😃",
+		"etoiles":5
 	},
 		{
 		"nom":"Moussa Bamba",
-		"description":"J'ai rarement vu quelqu'un d'aussi motivé dans la réalisation des projets"
+		"description":"J'ai rarement vu quelqu'un d'aussi motivé dans la réalisation des projets",
+		"etoiles":4
+	},
+  	{
+		"nom":"Kevin Zoungrana",
+		"description":"Y'a pas à dire ✌ je suis satisfait , vraiment beau travail Richard devrait s'améliorer peut être en terme de design mais à part ça top 😜",
+		"etoiles":3
 	}
 ]

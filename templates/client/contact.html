@@ -1,4 +1,6 @@
 {% extends 'client/base.html' %}
+{% from "_formhelper.html" import render_field %}
+
 
 {% block content  %}
 
@@ -9,14 +11,32 @@
         
         <!--================Home Banner Area =================-->
         <section class="banner_area">
+        
             <div class="box_1620">
 				<div class="banner_inner d-flex align-items-center">
+                
 					<div class="container">
 						<div class="banner_content text-center">
-							<h2>Contact Us</h2>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+              <div class="mt-2">
+                  {% for category,message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show text-center" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                  {% endfor %}
+              </div>
+
+              {% endif %}
+      {% endwith %}
+							<h2>Contactez-moi</h2>
 							<div class="page_link">
-								<a href="index.html">Home</a>
-								<a href="contact.html">Contact Us</a>
+								<a href="index.html">Accueil</a>
+								<a href="contact.html">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -24,7 +44,70 @@
             </div>
         </section>
         <!--================End Home Banner Area =================-->
+
+        <!--================Contact Area =================-->
+        <section  class="contact_area p_120">
+          
         
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>{{info.lieu}}</h6>
+								<p></p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">{{info.telephone}}</a></h6>
+                                <p>Lundi au vendredi de 9h à 18h</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">{{info.email}}</a></h6>
+                                <p>Écrivez-moi !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <form class="row contact_form"  method="post" id="contactForm" >
+						            {{ form.hidden_tag() }}
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+									 {{render_field(form.nom, size=32,class_="form-control",placeholder="Entrer votre nom",step=1,min=10,max=100,)}}
+                                </div>
+                                <div class="form-group">
+									 {{render_field(form.email, size=32,class_="form-control",placeholder="Entrer votre email",step=1,min=10,max=100,)}}
+
+                                </div>
+                                <div class="form-group">
+									 {{render_field(form.sujet, size=32,class_="form-control",placeholder="Entrer le sujet",step=1,min=10,max=100,)}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+									 {{render_field(form.message, size=32,class_="form-control",placeholder="Entrer le message",step=1,min=10,max=100,)}}
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn submit_btn">Envoyez votre message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+        
+
+
+    
        
         
         {% endblock  %}
+
+    

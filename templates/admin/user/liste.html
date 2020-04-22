@@ -7,43 +7,40 @@
 
           
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Liste de plats</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Liste de {{titre}}</h1>
 
 
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-0 font-weight-bold text-primary">Plats</h4>
-          <button style="float: right;" class="btn btn-success">
-            <a href="{{url_for('new_plat')}}" class="text-white">Créer un plat</a></button>
-
+              <h4 class="m-0 font-weight-bold text-primary">{{titre}}</h4>
             </div>
+            
             <div class="card-body">
+              
               <div class="table-responsive">
                 <table class="table table-bordered" id="matable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Nom</th>
-                      <th>Description</th>
-                      <th>Prix</th>
-                      <th>Catégorie</th>
+                      <th>Email</th>
+                      <th>Sujet</th>
+                      <th>Message</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                      {% for plat in plats %}
+                      {% for obj in data %}
 
                         <tr>
-                          <td>{{plat.nom}}</td>
-                          <td>{{plat.description}}</td>
-                          <td>{{plat.prix}}</td>
-                          <td>{{plat.categorie.description}}</td>
+                          <td>{{obj.nom}}</td>
+                          <td>{{obj.email}}</td>
+                          <td>{{obj.sujet}}</td>
+                          <td>{{obj.message}}</td>
 
                           <td class="text-center">
-                            <a href="{{url_for('edit_plat',description=plat.description)}}">Modifier</a>
-                            <a onclick="return confirm('supprimer ?')" href="{{url_for('remove_plat',description=plat.description)}}">Supprimer</a>
+                            <a onclick="return confirm('supprimer ?')" href="{{url_for('contact_remove',id=obj.id)}}">Supprimer</a>
                           </td>
                         </tr>
 

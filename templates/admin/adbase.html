@@ -38,23 +38,22 @@
         
         {% include 'admin/topbar.html' %}
 
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="mt-2">
+                    {% for category,message in messages %}
+                      <div class="alert alert-{{category}} alert-dismissible fade show text-center" role="alert">
+                          <strong>{{message}}</strong>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div style="margin-top: 150px">
-            {% for message in messages %}
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  <strong>{{message}}</strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
+                    {% endfor %}
+                </div>
 
-            {% endfor %}
-        </div>
-
-        {% endif %}
-{% endwith %}
+                {% endif %}
+              {% endwith %}
 
 
 

@@ -21,21 +21,55 @@ from forms import *
 
 
 #----------------------------------------------------------------------------------------------------------------------------------
+navs = {
+    
+		"Application":{
+			"Contacts":"contact",
+			"uilisateurs":"user"
+		},
+		"Fonctionnalités":{
+			"Contacts":'contact_liste',
+			"uilisateurs":'user_liste'
+		},
+		"troisieme":{
+			"Contacts":'contact_liste',
+			"uilisateurs":'user_liste'
+		}
+	}
 
 
-@app.route('/ad/base/')
-def base():
-	return render_template('admin/adbase.html')
 
 @app.route('/ad/contact/')
 def contact_liste():
     contacts = Contact.query.all()
-    return render_template('admin/adbase.html',contacts = contacts)
+    return render_template('admin/contact/liste.html',data = contacts,navs=navs,titre="Contacts")
+
+
+@app.route('/ad/categorie_remove/<id>',methods=['GET', 'POST'])
+def contact_remove(id):
+	c = Contact.query.filter_by(id=id).first_or_404()
+ 
+	if c :
+		db.session.delete(c)
+		db.session.commit()
+		flash("La suppression à bien été executé!","success")
+	return redirect(url_for('contact_liste'))
 
 
 
+@app.route('/ad/user/')
+def user_liste():
+    users = User.query.all()
+    return render_template('admin/contact/liste.html',data = users,navs=navs,titre="Utilisateurs")
 
-@app.route('/ad/chart/')
-def chart():
-	#plats = Plat.query.all()
-	return render_template('admin/charts.html')
+
+@app.route('/ad/user/<id>',methods=['GET', 'POST'])
+def user_remove(id):
+	c = User.query.filter_by(id=id).first_or_404()
+	if c :
+		db.session.delete(c)
+		db.session.commit()
+		flash("La suppression à bien été executé!","success")
+	return redirect(url_for('user_liste'))
+
+

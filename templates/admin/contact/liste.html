@@ -7,37 +7,40 @@
 
           
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Liste de catégories</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Liste de {{titre}}</h1>
 
 
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-0 font-weight-bold text-primary">Catégories</h4>
-          <button style="float: right;" class="btn btn-success">
-            <a href="{{url_for('new_categorie')}}" class="text-white">Créer une nouvelle catégorie</a></button>
-
+              <h4 class="m-0 font-weight-bold text-primary">{{titre}}</h4>
             </div>
+            
             <div class="card-body">
+              
               <div class="table-responsive">
                 <table class="table table-bordered" id="matable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Description</th>
+                      <th>Nom</th>
+                      <th>Email</th>
+                      <th>Sujet</th>
+                      <th>Message</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                      {% for categorie in categories %}
+                      {% for obj in data %}
 
                         <tr>
-                          <td>{{categorie.description}}</td>
+                          <td>{{obj.nom}}</td>
+                          <td>{{obj.email}}</td>
+                          <td>{{obj.sujet}}</td>
+                          <td>{{obj.message}}</td>
 
                           <td class="text-center">
-                            <a href="{{url_for('edit_categorie',description=categorie.description)}}">Modifier</a>
-                            <a onclick="return confirm('supprimer ?')" href="{{url_for('remove_categorie',description=categorie.description)}}">Supprimer</a>
+                            <a onclick="return confirm('supprimer ?')" href="{{url_for('contact_remove',id=obj.id)}}">Supprimer</a>
                           </td>
                         </tr>
 

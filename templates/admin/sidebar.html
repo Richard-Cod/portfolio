@@ -70,48 +70,29 @@
     
 
 
-
+      {% for cle,valeur in navs.items()  %}
             <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#{{cle}}" aria-expanded="true" aria-controls="{{cle}}">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Gestion</span>
+          <span>{{cle}}</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="{{cle}}" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="{{url_for('liste_categorie')}}">categorie</a>
-            <a class="collapse-item" href="{{url_for('liste_type')}}">Types</a>
-            <a class="collapse-item" href="{{url_for('liste_plat')}}">Plats</a>
+            {% for k,v in valeur.items() %}
+            <a class="collapse-item" href="../{{v}}">{{k}}</a>
+            {% endfor %}
+
+
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            
           </div>
         </div>
       </li>
 
-    
-            <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#compte" aria-expanded="true" aria-controls="compte">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Comptes</span>
-        </a>
-        <div id="compte" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="{{url_for('compte_operation',type='depot')}}">Depot</a>
-            <a class="collapse-item" href="{{url_for('compte_operation',type='retrait')}}">Retrait</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-
+      {% endfor %}
 
 
 

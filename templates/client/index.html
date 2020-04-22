@@ -14,22 +14,7 @@
         <section class="home_banner_area">
 		
            	<div class="container box_1620">
-			    {% with messages = get_flashed_messages(with_categories=true) %}
-              {% if messages %}
-              <div class="mt-2">
-                  {% for category,message in messages %}
-                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
-                        <strong>{{message}} <a href="#contactform">Revenir au formulaire</a> </strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                  {% endfor %}
-              </div>
-
-              {% endif %}
-      {% endwith %}
+			  
            		<div class="banner_inner d-flex align-items-center">
 				   
 					<div class="banner_content">
@@ -50,9 +35,7 @@
 										<li><a href="#"><i class="lnr lnr-home"></i> {{info.lieu}}</a></li>
 									</ul>
 									<ul class="list personal_social">
-										<li><a href="facebook.com"><i class="fa fa-facebook"></i></a></li>
-										<li><a href=""><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="https://www.linkedin.com/in/richard-bathiebo-7aa300157/"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -267,11 +250,15 @@
 							<div class="testi_item">
 								<p>{{i.description}}</p>
 								<h4>{{i.nom}}</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
+
+								{% for i in range(i.etoiles) %}
+									<a href="#"><i class="fa fa-star"></i></a>
+								{% endfor %}
+
+								{% for i in range(5-i.etoiles) %}
+									<a href="#"><i class="fa fa-star-o"></i></a>
+								{% endfor %}
+
 							</div>
 						</div>
 					{% endfor %}
@@ -282,68 +269,7 @@
         </section>
         <!--================End Testimonials Area =================-->
         
-       <!--================Contact Area =================-->
-        <section  class="contact_area p_120">
-            <div class="container">
-                <div id="mapBox" class="mapBox" 
-                    data-lat="40.701083" 
-                    data-lon="-74.1522848" 
-                    data-zoom="13" 
-                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-                    data-mlat="40.701083"
-                    data-mlon="-74.1522848">
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="contact_info">
-                            <div class="info_item">
-                                <i class="lnr lnr-home"></i>
-                                <h6>{{info.lieu}}</h6>
-								<p></p>
-                            </div>
-                            <div class="info_item">
-                                <i class="lnr lnr-phone-handset"></i>
-                                <h6><a href="#">{{info.telephone}}</a></h6>
-                                <p>Lundi au vendredi de 9h à 18h</p>
-                            </div>
-                            <div class="info_item">
-                                <i class="lnr lnr-envelope"></i>
-                                <h6><a href="#">{{info.email}}</a></h6>
-                                <p>Écrivez-moi !</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-
-                        <form class="row contact_form"  method="post" id="contactform" novalidate="novalidate">
-						            {{ form.hidden_tag() }}
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-									 {{render_field(form.nom, size=32,class_="form-control",placeholder="Entrer votre nom",step=1,min=10,max=100,)}}
-                                </div>
-                                <div class="form-group">
-									 {{render_field(form.email, size=32,class_="form-control",placeholder="Entrer votre email",step=1,min=10,max=100,)}}
-
-                                </div>
-                                <div class="form-group">
-									 {{render_field(form.sujet, size=32,class_="form-control",placeholder="Entrer le sujet",step=1,min=10,max=100,)}}
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-									 {{render_field(form.message, size=32,class_="form-control",placeholder="Entrer le message",step=1,min=10,max=100,)}}
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-right">
-                                <button type="submit" value="submit" class="btn submit_btn">Envoyez votre message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--================Contact Area =================-->
+       
         
 
 

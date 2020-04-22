@@ -60,6 +60,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
                             </div>
         				</aside>
         			</div>
+
         			<div class="col-lg-2">
         				<aside class="f_widget social_widget">
         					<div class="f_title">
@@ -68,7 +69,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
         					<p>Sur les réseaux sociaux</p>
         					<ul class="list">
 							
-        						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        						<li><a href="https://www.linkedin.com/in/richard-bathiebo-7aa300157/"><i class="fa fa-linkedin"></i></a></li>
         					</ul>
         				</aside>
         			</div>
@@ -80,7 +81,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
         
         
         
-
+{% block js %}
             
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -99,5 +100,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
         <script src="{{url_for('static',filename='client/vendors/counter-up/jquery.counterup.min.js')}}"></script>
         <script src="{{url_for('static',filename='client/js/mail-script.js')}}"></script>
         <script src="{{url_for('static',filename='client/js/theme.js')}}"></script>
+{% endblock %}
     </body>
 </html>
