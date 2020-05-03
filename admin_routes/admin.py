@@ -10,7 +10,6 @@ from wtforms import TextField, SubmitField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Email, ValidationError
 
-from flask_diced import Diced, persistence_methods
 
 
 

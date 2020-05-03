@@ -37,7 +37,21 @@
 							<div class="page_link">
 								<a href="index.html">Accueil</a>
 								<a href="contact.html">Contact</a>
+                                 
 							</div>
+                            <div style="max-width: 600px" class="row table table-bordered mx-auto">
+                                <div class="col-md-6 my-1">
+                                    <img height="100px" width="100px" src="{{url_for('static',filename='codeqr.jpg')}}" alt="">
+                                    <a disabled class="btn btn-success" href="{{url_for('static',filename='richard.apk')}}" download> <i class="fab fa-android"></i> Téléchargez mon appli Android </a>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <img src="https://img.icons8.com/all/500/ios-logo.png" height="100px" width="100px" alt="">
+                                    <button style="text-decoration: line-through;" class="btn btn-danger" disabled="true">
+                                        <i class="fab fa-apple"></i> Appli Ios bientôt disponible
+                                    </button>
+                                    
+                                </div>
+                            </div>
 						</div>
 					</div>
 				</div>
