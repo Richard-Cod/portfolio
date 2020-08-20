@@ -2,26 +2,28 @@ info = {
 	"nom":"Richard Bathiebo",
 	"profession":"Développeur Web/Mobile",
 	"description":"Bienvenue sur mon portfolio parcourez le et n'oubliez pas que la page de contact est là si vous voulez me joindre",
-	"telephone":"+221 78 153 79 66",
+	"telephone":"+226 52 83 79 96",
 	"email":"richard.bathiebo.7@gmail.com",
-	"lieu":"Dakar , Sénégal"
+	"lieu":"Ouagadougou , Burkina Faso"
 }
 myself = {
-	"aboutMe":"Je suis en 3e année d'informatique appliquée à la gestion des entreprises passionné de Python et JavaScript",
+	"aboutMe":"Titulaire d'une double licence en informatique appliquée à la gestion des entreprises passionné de Python et JavaScript",
 	"nbProjets":20,
 	"skills" : {
 		"Html/Css":80,
 		"Bootstrap":80,
-		"Angular": 10,
-		"React":20,
-		"Vue":10,
+		"Angular": 30,
+		"React":70,
+		"Vue":70,
 		
-		"PHP":60,
+		"Symfony":50,
 		"Django":80,
 		"Flask":80,
-		"Node Js":50,
+		"Node Js":70,
+		"Strapi":70,
+  
 
-		"Flutter":50,
+		"Flutter":70,
 		"React-Native":20,
 
 
@@ -49,8 +51,10 @@ exp = [
 ]
 technos = [
 	"Django",
+	"Flask",
 	"Symfony",
 	"React",
+	"vue",
 	"Wordpress"
 ]
 projets = [
