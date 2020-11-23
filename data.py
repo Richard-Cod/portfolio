@@ -53,8 +53,10 @@ exp = [
 ]
 technos = [
 	"Django",
+	"Flask",
 	"Symfony",
 	"React",
+	"vue",
 	"Wordpress"
 ]
 projets = [
