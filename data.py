@@ -2,32 +2,36 @@ info = {
 	"nom":"Richard Bathiebo",
 	"profession":"Développeur Web/Mobile",
 	"description":"Bienvenue sur mon portfolio parcourez le et n'oubliez pas que la page de contact est là si vous voulez me joindre",
-	"telephone":"+221 78 153 79 66",
+	"telephone":"07 521 62 086",
 	"email":"richard.bathiebo.7@gmail.com",
-	"lieu":"Dakar , Sénégal"
+	"lieu":"Lille , France"
 }
 myself = {
-	"aboutMe":"Je suis en 3e année d'informatique appliquée à la gestion des entreprises passionné de Python et JavaScript",
+	"aboutMe":"Titulaire d'une double licence en informatique appliquée à la gestion des entreprises , je suis en master 1 MSC PRO à Epitech,Lille où j'aspire au titre d'architecte logiciel/développeur d'applications",
 	"nbProjets":20,
 	"skills" : {
 		"Html/Css":80,
 		"Bootstrap":80,
-		"Angular": 10,
-		"React":20,
-		"Vue":10,
+		"React":70,
+		"Vue":75,
 		
-		"PHP":60,
+		"PHP":70,
 		"Django":80,
 		"Flask":80,
-		"Node Js":50,
+		"Node Js / Express":85,
 
-		"Flutter":50,
-		"React-Native":20,
+		"Flutter":60,
+		"React-Native":50,
 
 
 	}
 }
 parcours=[
+	{
+		"periode":"Octobre 2020-2022",
+		"lieu":"Epitech , Lille",
+		"poste":"Master (Msc pro) Architecte Logiciel/Développeur d'applications spécialité IA/BIG DATA"
+	},
 	{
 		"periode":"Septembre 2018-2020",
 		"lieu":"Institut Nationale Universitaire Champoleon d'Albi",
