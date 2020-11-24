@@ -97,3 +97,78 @@ temoignages=[
 		"etoiles":3
 	}
 ]
+
+certifications=[
+	# {
+	# 	"nom" : "The ultimate git course",
+	# 	"description":"Git version control system",
+	# 	"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/tsmP4fdkSmKaiez6t2jl",
+	# 	"date":"2020-09-12",
+	# 	"place":"CodingWithMosh",
+	# 	"source":"react-mosh.pdf"
+	# },
+
+	# {
+	# 	"nom" : "",
+	# 	"description":"",
+	# 	"image":"",
+	# 	"date":"",
+	# 	"place":"",
+	# 	"source":""
+	# },
+	{
+		"nom" : "The Complete Node js Course ",
+		"description":"Backend development with node js ",
+		"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/nlMKa4JeSBysXoj7pa90",
+		"date":"2020-09-12",
+		"place":"CodingWithMosh",
+		"source":"nodejs-mosh.pdf"
+	},
+	{
+		"nom" : "Python programming for developers ",
+		"description":"Python programming language",
+		"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/0p9uIw9CTFue2FotnyZa",
+		"date":"2020-09-12",
+		"place":"CodingWithMosh",
+		"source":"python-mosh.pdf"
+	},
+	{
+		"nom" : "Mastering React",
+		"description":"",
+		"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/SVFQZQAyRpqJ31f6LNGe",
+		"date":"2020-09-12",
+		"place":"CodingWithMosh",
+		"source":"react-mosh.pdf"
+	},
+	{
+		"nom" : "The Ultimate React Native Series : Fundamentals ",
+		"description":"Mobile app development",
+		"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/4C6yPDywSUeWYLyg1h9G",
+		"date":"2020-09-12",
+		"place":"CodingWithMosh",
+		"source":"reactnative-mosh-1.pdf"
+	},
+	{
+		"nom" : "The Ultimate React Native Series : Advanced Concepts",
+		"description":"Mobile app development",
+		"image":"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/4C6yPDywSUeWYLyg1h9G",
+		"date":"2020-09-12",
+		"place":"CodingWithMosh",
+		"source":"reactnative-mosh-2.pdf"
+	},
+	{
+		"nom" : "The Complete 2020 Flutter Development Bootcamp with Dart",
+		"description":"Mobile app development",
+		"image":"https://tutorialng.com/wp-content/uploads/2019/12/2259120_305f_5-725x405.jpg",
+		"date":"2020-09-12",
+		"place":"Udemy",
+		"source":"flutter-bootcamp.pdf"
+	},
+	{
+		"nom" : "full-stack development with django-react",
+		"image":"https://i.ytimg.com/vi/VyNAcE3N_C8/maxresdefault.jpg",
+		"date":"2020-09-12",
+		"place":"Udemy",
+		"source":"django-react-fullstack.pdf"
+	}
+]

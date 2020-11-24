@@ -21,7 +21,7 @@ from forms import *
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
-    return render_template('client/index.html',info=info,myself=myself,parcours=parcours,exp=exp,technos=technos,projets=projets,temoignages=temoignages)
+    return render_template('client/index.html',info=info,myself=myself,parcours=parcours,exp=exp,technos=technos,projets=projets,temoignages=temoignages,certifications=certifications)
   
 
   

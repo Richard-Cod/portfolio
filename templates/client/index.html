@@ -239,6 +239,41 @@
 				-->
 	</div>
 </section>
+
+<section class="certifications container">
+	<div class="main_title">
+		<h2>Certifications</h2>
+		<p>Toutes mes certifications (Self Learning) </p>
+	</div>
+
+	<div class="row">
+		{% for i in certifications %}
+
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+				<div class="row no-gutters">
+					<div class="col-md-4">
+						<img style="max-height: 50%;" src="{{i.image}}" class="card-img" alt="{{i.name}}">
+					</div>
+					<div class="col-md-8">
+
+						<div class="card-body">
+							<h5 class="card-title">{{i.nom}}</h5>
+							<p class="card-text">{{i.description}}</p>
+							<p class="card-text"><small class="text-muted">{{i.place}}</small></p>
+							<a href="{{url_for('static',filename='certifications')}}/{{i.source}}"
+								class="btn btn-sm btn-outline-primary">Voir le certificat</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+
+	</div>
+
+</section>
 <!--================End Home Gallery Area =================-->
 
 <!--================Testimonials Area =================-->
